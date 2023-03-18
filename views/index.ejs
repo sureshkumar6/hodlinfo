@@ -1,64 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hodlinfo</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body bgcolor="#191d28">
-    <header>
-		<div class="logo">
-			<img src="hodlinfo-logo.png" alt="Hodlinfo">
-        </div>
-        <div class='text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4'>
-            <div class="btn-group">
-                <select name="INR" id="INR">
-                    <option value="INR">INR</option>
-                </select>
-            </div>
-            <div class="btn-group">
-                <select name="BTC" id="BTC">
-                    <option value="BTC">BTC</option>
-                    <option value="ETH">ETH</option>
-                    <option value="USDT">USDT</option>
-                    <option value="XRP">XRP</option>
-                    <option value="TRX">TRX</option>
-                    <option value="DASH">DASH</option>
-                    <option value="ZEC">ZEC</option>
-                    <option value="XEM">XEM</option>
-                    <option value="IOST">IOST</option>
-                    <option value="WIN">WIN</option>
-                    <option value="BTT">BTT</option>
-                    <option value="WRX">WRX</option>
-                </select>
-            </div>
-            <div class="btn-group"><button type="BUY-BTC">BUY BTC</button></div>
-        </div>
-	</header>
 
-    <% if(details!=null) { %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <header>
+            <!-- <div class="text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4">
+                <img src="/images/hodlinfo-logo-white.png" alt="Hodlinfo">
+            </div>
+            <div class='text-center padding-none col-12 col-sm-12 col-md-2 col-lg-4'>
+                <div class="btn-group">
+                    <select name="INR" id="INR">
+                        <option value="INR">INR</option>
+                    </select>
+                </div>
+                <div class="btn-group">
+                    <select name="BTC" id="BTC">
+                        <option value="BTC">BTC</option>
+                        <option value="ETH">ETH</option>
+                        <option value="USDT">USDT</option>
+                        <option value="XRP">XRP</option>
+                        <option value="TRX">TRX</option>
+                        <option value="DASH">DASH</option>
+                        <option value="ZEC">ZEC</option>
+                        <option value="XEM">XEM</option>
+                        <option value="IOST">IOST</option>
+                        <option value="WIN">WIN</option>
+                        <option value="BTT">BTT</option>
+                        <option value="WRX">WRX</option>
+                    </select>
+                </div>
+                <div class="btn-group"><button type="BUY-BTC">BUY BTC</button></div>
+            </div> -->
+        </header>
+
+        <% if(details!=null) { %>
         <table>
-        <tr>
-            <th>Name</th>
-            <th>Last</th>
-            <th>Buy</th>
-            <th>Sell</th>
-            <th>Volume</th>
-            <th>base_unit</th>
-        </tr>
-        <% details.forEach(function(item){ %>
-        <tr>
-            <td><%= item.name%></td>
-            <td><%= item.last%></td>
-            <td><%= item.buy%></td>
-            <td><%= item.sell%></td>
-            <td><%= item.volume%></td>
-            <td><%= item.base_unit%></td>
-        
-        </tr>
-        <% }) %>
+            <tr>
+                <th>Name</th>
+                <th>Last</th>
+                <th>Buy</th>
+                <th>Sell</th>
+                <th>Volume</th>
+                <th>base_unit</th>
+            </tr>
+            <% details.forEach(function(item){ %>
+            <tr>
+                <td>
+                    <%= item.name%>
+                </td>
+                <td>
+                    <%= item.last%>
+                </td>
+                <td>
+                    <%= item.buy%>
+                </td>
+                <td>
+                    <%= item.sell%>
+                </td>
+                <td>
+                    <%= item.volume%>
+                </td>
+                <td>
+                    <%= item.base_unit%>
+                </td>
+
+            </tr>
+            <% }) %>
         </table>
         <% } %>
+    </div>
 </body>
+
 </html>

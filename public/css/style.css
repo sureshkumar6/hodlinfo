@@ -1,0 +1,11 @@
+@import '~bootstrap/dist/css/bootstrap-min.css';
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-wrapper {
+    background-color: aqua;
+}
