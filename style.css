@@ -1,0 +1,12 @@
+ul {
+    list-style-type: none ;
+    margin: 0px 0px 20px 0px ;
+    padding: 7px 5px 7px 5px ;
+    }
+ul.right {
+    text-align: right ;
+    }
+ul li {
+    display: inline ;
+    padding: 0px 3px 0px 3px ;
+    }
