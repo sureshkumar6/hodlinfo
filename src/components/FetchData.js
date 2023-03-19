@@ -16,29 +16,34 @@ const FetchData=()=>{
     }
     return(
         <div>
-            <ul className='ul_top_hypers'>
-                <li>#</li>
-                <li>Name</li>
-                <li>Last</li>
-                <li>Buy</li>
-                <li>Sell</li>
-                <li>volume</li>
-                <li>base_unit</li>
-            </ul>
-            {
-                list.length > 0 ? list.map((item, index)=>
-                <ul className='ul_top_hypers'>
-                                <li key="{index.sno}">{index + 1}</li>
-                                <li key="{index.name}">{item.name}</li>
-                                <li key="{index.last}">{item.last}</li>
-                                <li key="{index.buy}">${item.buy}</li>
-                                <li key="{index.sell}">{item.sell}</li>
-                                <li key="{index.volume}">{item.volume}</li>
-                                <li key="{index.base}">{item.base_unit}</li>
-                </ul>
-                                        )
-                                            : <h5>No Record</h5>
-            }
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Last</th>
+                        <th>Buy</th>
+                        <th>Sell</th>
+                        <th>volume</th>
+                        <th>base_unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        list.map((item, index)=>(
+                            <tr key={item._id}>
+                                <td>{index + 1}</td>
+                                <td>{item.name}</td>
+                                <td>{item.last}</td>
+                                <td>{item.buy}</td>
+                                <td>{item.sell}</td>
+                                <td>{item.volume}</td>
+                                <td>{item.base_unit}</td>
+                            </tr>
+                        ))
+                    }
+                </tbody>
+            </table>
         </div>
     )
 }

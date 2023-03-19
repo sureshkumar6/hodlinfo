@@ -3,27 +3,17 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import Ticker from './models/tickers.js';
-import ejs from "ejs";
-import path from "path";
-import { fileURLToPath } from 'url';
 import axios from 'axios'
 import mongoose from 'mongoose';
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
 const PORT = process.env.PORT || 6060;
 
-// View engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
 // App configuration
 app.use(express.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/css', express.static(path.join(__dirname, 'node_modules', 'bootstrap', 'dist', 'css')));
 
 //Database Connection
 mongoose.set('strictQuery', false)
