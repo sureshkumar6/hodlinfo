@@ -13,7 +13,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 6060;
 
 // View engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -65,8 +65,16 @@ setInterval(getData, 4000);
 
 app.get("/", async (req, resp) => {
   let data = await Ticker.find();
-  resp.render("index", { details: data });
+  resp.send(data)
 });
+
+
+app.get('/tickers', async (req, resp) => {
+  let data = await Ticker.find()
+  if (data.length > 0) {
+      resp.send(data)
+  } 
+})
 
 connectDB().then(()=>{
   app.listen(PORT,()=>{
