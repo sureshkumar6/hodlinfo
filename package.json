@@ -1,27 +1,45 @@
 {
-  "name": "hodlinfo",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "type": "module",
-  "dependencies": {
-    "bootstrap": "^5.3.0-alpha1",
-    "cors": "^2.8.5",
-    "ejs": "^3.1.9",
-    "express": "^4.18.2",
-    "mongoose": "^7.0.2"
-  },
+  "name": "hodlinfo-ng",
+  "version": "0.0.0",
+  "type":"module",
   "scripts": {
-    "start": "nodemon app.js"
+    "ng": "ng",
+    "start": "node server.js | ng serve --proxy-config proxy.config.json",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sureshkumar6/hodlinfo.git"
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^15.1.0",
+    "@angular/common": "^15.1.0",
+    "@angular/compiler": "^15.1.0",
+    "@angular/core": "^15.1.0",
+    "@angular/forms": "^15.1.0",
+    "@angular/platform-browser": "^15.1.0",
+    "@angular/platform-browser-dynamic": "^15.1.0",
+    "@angular/router": "^15.1.0",
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.12.0"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sureshkumar6/hodlinfo/issues"
-  },
-  "homepage": "https://github.com/sureshkumar6/hodlinfo#readme"
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^15.1.5",
+    "@angular/cli": "~15.1.5",
+    "@angular/compiler-cli": "^15.1.0",
+    "@types/jasmine": "~4.3.0",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.9.4"
+  }
 }
